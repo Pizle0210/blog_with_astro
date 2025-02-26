@@ -17,7 +17,7 @@ const baseTagClass =
         <span
           class={`${baseTagClass} ${index % 2 === 0 ? 'bg-blue-500' : 'bg-gray-600'}`}
         >
-          <a href={`/tags/${tag}`}>#{capitalize(tag)}</a>
+          <a href={`/articles/tag/` + tag}>#{capitalize(tag)}</a>
         </span>
       ))
     ) : (

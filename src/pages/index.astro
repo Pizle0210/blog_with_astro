@@ -24,15 +24,15 @@ const otherArticles: CollectionEntry<'blog'>[] = allBlogArticles.slice(1);
   <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
     <div>
       <h1
-        class="text-5xl antialiased text-start lg:text-center font-bold mt-4 mb-8 leading-tight xl:text-6xl"
+        class="text-2xl sm:text-3xl antialiased max-lg:text-center font-bold mt-4 mb-8 leading-tight"
       >
-        Articles, Stories & Tutorials for Tech People
+        Dive into the World of Tech: Articles, Stories & Tutorials 🚀
       </h1>
 
       <SearchForm />
     </div>
     <!-- Most Recent Article -->
-    <div class="p-2">
+    <div class="">
       <MostRecent article={mostRecentArticle} />
     </div>
   </div>

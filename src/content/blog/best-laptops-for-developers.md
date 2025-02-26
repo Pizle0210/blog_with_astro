@@ -1,13 +1,13 @@
 ---
-title: 'The best laptops for developers in 2024'
+title: 'The best laptops for developers in 2025'
 pubDate: 2025-03-20
 author: 'John Doe'
 image: 'image1.png'
 tags: ['tech', 'hardware']
-slug: the-best-laptops-for-developers-in-2024
+slug: the-best-laptops-for-developers-in-2025
 ---
 
-In the ever-evolving landscape of technology, developers require laptops that can keep up with their demands for coding, debugging, and testing. As we step into 2024, the search for the perfect laptop for developers continues. Let's explore some of the top contenders for the title of "Best Laptops for Developers" this year.
+In the ever-evolving landscape of technology, developers require laptops that can keep up with their demands for coding, debugging, and testing. As we step into 2025, the search for the perfect laptop for developers continues. Let's explore some of the top contenders for the title of "Best Laptops for Developers" this year.
 
 ## 1. MacBook Pro (M2X Chip)
 
