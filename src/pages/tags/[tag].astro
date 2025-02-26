@@ -16,12 +16,14 @@ const taggedArticles = allBlogArticles.filter((article) =>
 
   <!-- Main Grid -->
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-    {taggedArticles.length > 0 ? (
-      taggedArticles.map((article) => <ArticleCard article={article} />)
-    ) : (
-      <p class="col-span-full text-center text-gray-500">
-        No articles found for this tag.
-      </p>
-    )}
+    {
+      taggedArticles.length > 0 ? (
+        taggedArticles.map((article) => <ArticleCard article={article} />)
+      ) : (
+        <p class="col-span-full text-center text-gray-500">
+          No articles found for this tag.
+        </p>
+      )
+    }
   </div>
 </Layout>

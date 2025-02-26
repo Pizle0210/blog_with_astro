@@ -1,21 +1,19 @@
 ---
-import{ getCollection, type CollectionEntry } from "astro:content";
-import { capitalize } from "../utils";
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { capitalize } from '../utils';
 
+const allBlogArticles: CollectionEntry<'blog'>[] = await getCollection('blog');
 
-const allBlogArticles:CollectionEntry<'blog'>[] = await getCollection('blog');
-
-const tags:string[] = allBlogArticles.flatMap((article) => article.data.tags);
+const tags: string[] = allBlogArticles.flatMap((article) => article.data.tags);
 const uniqueTags = [...new Set(tags)];
 ---
 
-
-<footer class="bg-indigo-900 text-white max-w-full">
+<footer class="bg-indigo-900 lg:pb-10 text-white max-w-full">
   <div class="container mx-auto mt-10 max-w-screen-xl px-8">
     <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
       <div class="mt-10">
         <h3 class="text-xl font-semibold mb-4">About</h3>
-        <p class="text-white text-sm">
+        <p class="text-white text-sm leading-6">
           TechPeople is a blog for tech enthusiasts. We publish articles,
           stories and tutorials about the latest technology trends and
           advancements.
@@ -23,14 +21,18 @@ const uniqueTags = [...new Set(tags)];
       </div>
       <div class="mt-10">
         <h3 class="text-xl font-semibold mb-4">Categories</h3>
-        {
-          uniqueTags.map((tag) => (
-            <a href={`/tags/${tag}`} class="block text
-            -white text-sm mb-2 hover:text-indigo-400">
-              {capitalize(tag)}
-            </a>
-          ))
-        }
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-1.5">
+          {
+            uniqueTags.map((tag) => (
+              <a
+                href={`/tags/` + tag}
+                class="block text-white text-sm font-light  hover:text-indigo-400"
+              >
+                {capitalize(tag)}
+              </a>
+            ))
+          }
+        </div>
       </div>
       <div class="mt-10">
         <h3 class="text-xl font-semibold mb-4">Contact</h3>

@@ -16,7 +16,7 @@ const baseTagClass =
         <span
           class={`${baseTagClass} ${index % 2 === 0 ? 'bg-blue-500' : 'bg-gray-600'}`}
         >
-          <a href={`/articles/tag/` + tag}>#{capitalize(tag)}</a>
+          <a href={`/tags/` + tag}>#{capitalize(tag)}</a>
         </span>
       ))
     ) : (
@@ -24,3 +24,8 @@ const baseTagClass =
     )
   }
 </div>
+
+<!-- In the above code, we have created a  Tags  component that accepts an array of tags as a prop. We are using the  capitalize  function from the  utils.ts  file to capitalize the first letter of each tag. 
+  We are also using the  baseTagClass  variable to define the base styles for the tags. We are using the  map  function to iterate over the tags array and render each tag as a clickable link. 
+  We are also using the  index  variable to determine the background color of the tag. If the index is even, we are using the  bg-blue-500  class, and if the index is odd, we are using the  bg-gray-600  class. 
+  Finally we are rendering the tags in a flex container with a gap of 2 units between each tag. -->
