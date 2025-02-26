@@ -1,20 +1,26 @@
 ---
-const { tags } = Astro.props;
-
+import { capitalize } from '../utils';
 type Props = {
   tags: string[];
 };
+
+const { tags } = Astro.props as Props;
+const baseTagClass =
+  'px-2 py-1 text-white rounded-full text-xs hover:opacity-90';
 ---
 
-<div class="flex flex-wrap">
+<div class="flex flex-wrap gap-2" aria-label="Post tags">
   {
-    tags.map((tag) => (
-      <a
-        href={`/tags/${tag}`}
-        class="px-2 py-1 border text-white rounded-full text-xs mr-2 hover:bg-indigo-500"
-      >
-        {tag}
-      </a>
-    ))
+    tags ? (
+      tags.map((tag: string, index: number) => (
+        <span
+          class={`${baseTagClass} ${index % 2 === 0 ? 'bg-blue-500' : 'bg-gray-600'}`}
+        >
+          <a href={`/articles/tag/` + tag}>#{capitalize(tag)}</a>
+        </span>
+      ))
+    ) : (
+      <span class="text-gray-500 text-xs">No tags available</span>
+    )
   }
 </div>
