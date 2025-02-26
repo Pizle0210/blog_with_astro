@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import SearchForm from '../components/SearchForm.astro';
+import Layout from '../layouts/Layout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import type { CollectionEntry } from 'astro:content';
+import { HOMEPAGE_ARTICLE_LIMIT } from '../constants';
+import MostRecent from '../components/MostRecent.astro';
+
+const allBlogArticles: CollectionEntry<'blog'>[] = (
+  await getCollection('blog')
+).sort(
+  (a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) =>
+    new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
+
+const mostRecentArticle: CollectionEntry<'blog'> = allBlogArticles[0];
+
+const otherArticles: CollectionEntry<'blog'>[] = allBlogArticles.slice(1);
+---
+
+<!-- Top Grid -->
+<Layout>
+  <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+    <div>
+      <h1
+        class="text-5xl antialiased text-start lg:text-center font-bold mt-4 mb-8 leading-tight xl:text-6xl"
+      >
+        Articles, Stories & Tutorials for Tech People
+      </h1>
+
+      <SearchForm />
+    </div>
+    <!-- Most Recent Article -->
+    <div class="p-2">
+      <MostRecent article={mostRecentArticle} />
+    </div>
+  </div>
+
+  <!-- Main Grid -->
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <!-- Article Card -->
+    {
+      otherArticles.slice(0, HOMEPAGE_ARTICLE_LIMIT) &&
+      otherArticles.slice(0, HOMEPAGE_ARTICLE_LIMIT).length ? (
+        otherArticles.map((article) => <ArticleCard article={article} />)
+      ) : (
+        <p>No articles found.</p>
+      )
+    }
+  </div>
+</Layout>
