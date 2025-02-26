@@ -6,12 +6,14 @@ import Tags from './Tags.astro';
 const { article } = Astro.props;
 
 type Props = {
-    article: CollectionEntry<'blog'>;
-}
+  article: CollectionEntry<'blog'>;
+};
 ---
 
-<div class="max-w-md mx-auto mt-10">
-  <div class="bg-white rounded-lg overflow-hidden shadow-lg flex flex-col justify-between h-full">
+<div class="max-w-md w-full mx-auto mt-10">
+  <div
+    class="bg-white rounded-lg overflow-hidden shadow-lg flex flex-col justify-between h-full"
+  >
     <a href={`/articles/${article.data.slug}`}>
       <img
         src={'/images/' + article.data.image}
@@ -20,7 +22,9 @@ type Props = {
       />
     </a>
     <div class="p-6 flex-grow">
-      <h2 class="text-[clamp(1.2rem,2vw,3rem)] text-start font-semibold mb-2">
+      <h2
+        class="text-[clamp(1.2rem,2vw,1.8rem)] lg:leading-9 text-start font-semibold mb-2"
+      >
         <a href={`/articles/${article.data.slug}`}>{article.data.title}</a>
       </h2>
       <p class="text-gray-600 text-sm mb-4">
@@ -29,5 +33,4 @@ type Props = {
       <Tags tags={article.data.tags} />
     </div>
   </div>
-</div>
 </div>

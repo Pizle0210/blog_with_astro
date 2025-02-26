@@ -2,7 +2,7 @@
 title: 'Top Fashion Trends for 2025'
 pubDate: 2025-01-10
 author: 'Jane Smith'
-image: 'fashion_trend.jpg'
+image: 'fashion_for_men.jpg'
 tags: ['fashion', 'trends']
 slug: top-fashion-trends-2025
 ---

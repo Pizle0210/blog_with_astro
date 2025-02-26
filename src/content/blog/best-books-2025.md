@@ -2,7 +2,7 @@
 title: 'Must-Read Books for 2025'
 pubDate: 2025-02-15
 author: 'Emily Johnson'
-image: 'best_books.jpg'
+image: 'books-1.jpg'
 tags: ['books', 'reading']
 slug: must-read-books-2025
 ---
