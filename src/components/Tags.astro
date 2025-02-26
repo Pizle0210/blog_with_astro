@@ -1,4 +1,6 @@
 ---
+import { capitalize } from '../utils';
+
 type Props = {
   tags: string[];
 };
@@ -15,7 +17,7 @@ const baseTagClass =
         <span
           class={`${baseTagClass} ${index % 2 === 0 ? 'bg-blue-500' : 'bg-gray-600'}`}
         >
-          <a href={`/tags/${tag}`}>{tag}</a>
+          <a href={`/tags/${tag}`}>{capitalize(tag)}</a>
         </span>
       ))
     ) : (
